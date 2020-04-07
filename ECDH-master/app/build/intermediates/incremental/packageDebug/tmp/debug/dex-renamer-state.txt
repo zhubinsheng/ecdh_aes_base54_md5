@@ -1,0 +1,4 @@
+#Tue Apr 07 21:30:36 CST 2020
+base.0=/home/zhubinsheng/AndroidStudioProjects/MyGithub/ECDH-master/app/build/intermediates/dex/debug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
