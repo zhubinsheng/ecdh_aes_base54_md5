@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ECDH-master/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
+            "outputFile": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ecdh_aes_base54_md5/ECDH-master/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ka/values-ka.xml",
             "map": [
                 {
                     "source": "/home/zhubinsheng/.gradle/caches/transforms-2/files-2.1/e3ba22704938798f8d9c1d66b1795883/appcompat-v7-28.0.0/res/values-ka/values-ka.xml",

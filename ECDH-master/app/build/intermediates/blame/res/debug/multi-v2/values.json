@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ECDH-master/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ecdh_aes_base54_md5/ECDH-master/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/home/zhubinsheng/.gradle/caches/transforms-2/files-2.1/8fceab77ef53be40375fa0fc66de376b/transition-28.0.0/res/values/values.xml",
@@ -40,24 +40,7 @@
                     }
                 },
                 {
-                    "source": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ECDH-master/app/src/main/res/values/dimens.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "88,146,202",
-                        "endColumns": "57,55,41",
-                        "endOffsets": "141,197,239"
-                    },
-                    "to": {
-                        "startLines": "208,209,266",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "13676,13734,17425",
-                        "endColumns": "57,55,41",
-                        "endOffsets": "13729,13785,17462"
-                    }
-                },
-                {
-                    "source": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ECDH-master/app/src/main/res/values/strings.xml",
+                    "source": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ecdh_aes_base54_md5/ECDH-master/app/src/main/res/values/strings.xml",
                     "from": {
                         "startLines": "2,1",
                         "startColumns": "4,4",
@@ -112,6 +95,25 @@
                     }
                 },
                 {
+                    "source": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ecdh_aes_base54_md5/ECDH-master/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3,15,10,17",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "54,525,374,617",
+                        "endLines": "8,15,13,17",
+                        "endColumns": "12,90,12,80",
+                        "endOffsets": "368,611,519,693"
+                    },
+                    "to": {
+                        "startLines": "469,475,476,480",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "31032,31351,31441,31591",
+                        "endLines": "474,475,479,480",
+                        "endColumns": "12,89,12,79",
+                        "endOffsets": "31346,31436,31586,31666"
+                    }
+                },
+                {
                     "source": "/home/zhubinsheng/.gradle/caches/transforms-2/files-2.1/09c1f5634c674c46b74176ad3d1ddced/support-compat-28.0.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,171,172,176,177,178,6,13,56,88,125",
@@ -150,22 +152,20 @@
                     }
                 },
                 {
-                    "source": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ECDH-master/app/src/main/res/values/styles.xml",
+                    "source": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ecdh_aes_base54_md5/ECDH-master/app/src/main/res/values/dimens.xml",
                     "from": {
-                        "startLines": "3,15,10,17",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "54,525,374,617",
-                        "endLines": "8,15,13,17",
-                        "endColumns": "12,90,12,80",
-                        "endOffsets": "368,611,519,693"
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "88,146,202",
+                        "endColumns": "57,55,41",
+                        "endOffsets": "141,197,239"
                     },
                     "to": {
-                        "startLines": "469,475,476,480",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "31032,31351,31441,31591",
-                        "endLines": "474,475,479,480",
-                        "endColumns": "12,89,12,79",
-                        "endOffsets": "31346,31436,31586,31666"
+                        "startLines": "208,209,266",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "13676,13734,17425",
+                        "endColumns": "57,55,41",
+                        "endOffsets": "13729,13785,17462"
                     }
                 },
                 {
@@ -188,7 +188,7 @@
                     }
                 },
                 {
-                    "source": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ECDH-master/app/src/main/res/values/colors.xml",
+                    "source": "/home/zhubinsheng/AndroidStudioProjects/MyGithub/ecdh_aes_base54_md5/ECDH-master/app/src/main/res/values/colors.xml",
                     "from": {
                         "startLines": "4,2,3",
                         "startColumns": "4,4,4",

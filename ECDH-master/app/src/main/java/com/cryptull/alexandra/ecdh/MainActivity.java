@@ -13,11 +13,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import org.spongycastle.jcajce.provider.config.ConfigurableProvider;
-import org.spongycastle.jce.spec.ECParameterSpec;
-import org.spongycastle.math.ec.ECCurve;
-
-import org.spongycastle.util.encoders.Hex;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.bouncycastle.jce.spec.ECParameterSpec;
+import org.bouncycastle.math.ec.ECCurve;
+import org.bouncycastle.util.encoders.Hex;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
@@ -47,16 +46,16 @@ import javax.crypto.KeyAgreement;
 
 public class MainActivity extends AppCompatActivity {
 
-    static {
-        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
-    }
+//    static {
+//        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
+//    }
 
     BigInteger q = new BigInteger("883423532389192164791648750360308885314476597252960362792450860609699839");
     BigInteger a = new BigInteger("fffffffffffffffffffffffffffffffefffffffffffffffc", 16);
     BigInteger b = new BigInteger("fffffffffffffffffffffffffffffffefffffffffffffffc", 16);
     BigInteger n = new BigInteger("883423532389192164791648750360308884807550341691627752275345424702807307");
     byte[] G_hex = Hex.decode("020ffa963cdca8816ccc33b8642bedf905c3d358573d3f27fbbd3b3cb9aaaf");
-    org.spongycastle.math.ec.ECPoint G;
+    ECPoint G;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
+        //Security.insertProviderAt(new BouncyCastleProvider(), 1);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -94,16 +93,16 @@ public class MainActivity extends AppCompatActivity {
         KeyPairGenerator keyGen = null;
 
         try {
-            keyGen = KeyPairGenerator.getInstance("ECDH", "SC");
+            keyGen = KeyPairGenerator.getInstance("ECDH", new BouncyCastleProvider());
 
 //                    ECCurve curve = new ECCurve.Fp( q, a, b);
 //                    G = curve.decodePoint(G_hex);
 //                    ECParameterSpec ecSpec = new ECParameterSpec( curve, G, n);
             keyGen.initialize(ecSpec2, new SecureRandom());
 
-            KeyAgreement aKeyAgree = KeyAgreement.getInstance("ECDH", "SC");
+            KeyAgreement aKeyAgree = KeyAgreement.getInstance("ECDH", new BouncyCastleProvider());
             KeyPair aPair = keyGen.generateKeyPair();
-            KeyAgreement bKeyAgree = KeyAgreement.getInstance("ECDH", "SC");
+            KeyAgreement bKeyAgree = KeyAgreement.getInstance("ECDH", new BouncyCastleProvider());
             KeyPair bPair = keyGen.generateKeyPair();
 
             aKeyAgree.init(aPair.getPrivate());
@@ -112,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             aKeyAgree.doPhase(bPair.getPublic(), true);
             bKeyAgree.doPhase(aPair.getPublic(), true);
 
-            MessageDigest hash = MessageDigest.getInstance("SHA1", "SC");
+            MessageDigest hash = MessageDigest.getInstance("SHA1", new BouncyCastleProvider());
 
             String signResult = sign(Base64.encodeToString(aKeyAgree.generateSecret(),Base64.DEFAULT),bPair.getPrivate());
             boolean verifyResult = verify(Base64.encodeToString(aKeyAgree.generateSecret(),Base64.DEFAULT),bPair.getPublic(),signResult);
@@ -123,8 +122,6 @@ public class MainActivity extends AppCompatActivity {
             String descifrardateResult = AES.descifrar1(cifrardateResult,bKeyAgree);
             Log.e("test3", descifrardateResult);
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchProviderException e) {
             e.printStackTrace();
         } catch (InvalidKeyException e) {
             e.printStackTrace();
@@ -153,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
             //PublicKey publicKey = keyFactory.generatePublic(x509EncodedKeySpec);
             Log.e("test2", textContent);
             Log.e("test2", Arrays.toString(signBytes));
-            Signature signature = Signature.getInstance("SHA256withECDSA");
+            Signature signature = Signature.getInstance("SHA256withECDSA",new BouncyCastleProvider());
             signature.initVerify(pubKey);
             signature.update(contentBytes);
             //Log.e("contentBytes", Arrays.toString(contentBytes));
@@ -214,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public byte[] signData(String algorithm, byte[] data, PrivateKey key) throws Exception {
-        Signature signer = Signature.getInstance(algorithm);
+        Signature signer = Signature.getInstance(algorithm,new BouncyCastleProvider());
         signer.initSign(key);
         signer.update(data);
         //Log.e("contentBytes", Arrays.toString(data));
