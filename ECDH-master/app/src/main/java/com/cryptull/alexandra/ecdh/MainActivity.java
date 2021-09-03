@@ -2,16 +2,18 @@ package com.cryptull.alexandra.ecdh;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.jce.spec.ECParameterSpec;
@@ -46,10 +48,6 @@ import javax.crypto.KeyAgreement;
 
 public class MainActivity extends AppCompatActivity {
 
-//    static {
-//        Security.insertProviderAt(new org.spongycastle.jce.provider.BouncyCastleProvider(), 1);
-//    }
-
     BigInteger q = new BigInteger("883423532389192164791648750360308885314476597252960362792450860609699839");
     BigInteger a = new BigInteger("fffffffffffffffffffffffffffffffefffffffffffffffc", 16);
     BigInteger b = new BigInteger("fffffffffffffffffffffffffffffffefffffffffffffffc", 16);
@@ -61,12 +59,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         //Security.insertProviderAt(new BouncyCastleProvider(), 1);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        AppCompatButton fab = (AppCompatButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,4 +1,4 @@
-#Tue Apr 14 17:32:01 CST 2020
-base.0=/home/zhubinsheng/AndroidStudioProjects/MyGithub/ecdh_aes_base54_md5/ECDH-master/app/build/intermediates/dex/debug/out/classes.dex
+#Fri Sep 03 18:22:11 CST 2021
+base.0=C\:\\Users\\zhubinsheng\\GitHub\\ecdh_aes_base54_md5\\ECDH-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
