@@ -1,6 +1,6 @@
 # ecdh_aes_base54_md5
 # ECDH
-Example of a basic ECDH in Android with Spongycastle
+Example of a basic ECDH in Android with bouncycastle
 
 These are logs:
 I/ECDHTest: p:883423532389192164791648750360308885314476597252960362792450860609699839
